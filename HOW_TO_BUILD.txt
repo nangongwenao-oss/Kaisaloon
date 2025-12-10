@@ -1,0 +1,48 @@
+知识沙龙App构建说明
+==================
+
+项目已经准备好进行最终构建，所有已知问题都已修复。
+
+推荐构建方式：
+
+方法一：使用Android Studio（推荐）
+--------------------------------
+1. 打开Android Studio
+2. 选择"Open an existing Android Studio project"
+3. 导航到此项目目录并打开
+4. 等待Gradle同步完成
+5. 点击"Run"按钮或使用菜单 Build > Make Project
+
+方法二：命令行构建
+----------------
+在项目根目录下运行以下命令之一：
+
+Windows:
+.\gradlew.bat assembleDebug
+
+Unix/Linux/Mac:
+./gradlew assembleDebug
+
+构建成功的APK文件位置：
+app/build/outputs/apk/debug/app-debug.apk
+
+已修复的问题：
+-------------
+1. Java版本兼容性问题（升级Gradle到8.5版本）
+2. 非ASCII字符路径问题（添加android.overridePathCheck=true）
+3. 命名空间问题（在build.gradle中添加namespace配置）
+4. SDK XML版本兼容性问题
+5. 私有资源引用问题（已替换为自定义矢量图标）
+6. AndroidX支持配置问题
+
+如果在构建过程中遇到任何问题，请确保：
+1. 已安装Java JDK 17或更高版本
+2. 已正确配置JAVA_HOME环境变量
+3. 已安装Android SDK并正确配置
+
+故障排除建议：
+- 如果命令行构建长时间无响应，建议使用Android Studio打开项目进行构建
+- 确保系统PATH环境变量包含Java和Android SDK的路径
+- 如果出现权限问题，尝试以管理员身份运行命令提示符
+- 清理Gradle缓存：运行命令 gradlew --stop 然后删除 .gradle 目录
+- 检查防火墙设置，确保允许Gradle下载依赖项

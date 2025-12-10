@@ -1,0 +1,31 @@
+使用Android Studio构建知识沙龙App
+============================
+
+项目已经准备好使用Android Studio进行构建。
+
+步骤：
+1. 打开Android Studio
+2. 选择"Open an existing Android Studio project"
+3. 导航到此项目目录(d:\AI\app开发\知识沙龙app\KaiSaloon)并打开
+4. 等待Gradle同步完成（这可能需要几分钟时间）
+5. 点击绿色的"Run"按钮（或使用菜单 Build > Make Project）
+
+如果遇到问题：
+- 确保Android Studio已安装最新版本
+- 确保已安装Android SDK API 33
+- 如果提示缺少依赖项，允许Android Studio自动下载
+
+构建成功后，APK文件位置：
+- Debug版本：app/build/outputs/apk/debug/app-debug.apk
+- Release版本：app/build/outputs/apk/release/app-release.apk
+
+已修复的问题：
+1. Java版本兼容性问题（升级Gradle到8.5版本）
+2. 非ASCII字符路径问题（添加android.overridePathCheck=true）
+3. 命名空间问题（在build.gradle中添加namespace配置）
+4. 私有资源引用问题（替换为公共可用图标）
+
+如果仍有问题，请尝试：
+1. File > Invalidate Caches and Restart
+2. 删除项目中的 .gradle 目录后重新导入
+3. 检查Android Studio的SDK设置是否正确
